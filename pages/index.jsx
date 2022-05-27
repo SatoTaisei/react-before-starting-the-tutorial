@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Breadcrumb } from "../components/breadcrumb/Breadcrumb";
-import { Footer } from "../components/Footer/Footer";
+import { Footer } from "../components/footer/Footer";
 import { Heading } from "../components/heading/Heading";
 import { Links } from "../components/links/Links";
 import styles from "../styles/Home.module.css";
