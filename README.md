@@ -2,6 +2,8 @@
 
 これは**はじめて React に触れる方のためのチュートリアル**です。
 
+---
+
 Step1：Next.js が用意するコマンドでテンプレートを作成。
 
 Step2：ローカルサーバーで立ち上げる。
@@ -11,8 +13,6 @@ Step3：初期画面をコンポーネント化しリファクタリングする
 ---
 
 ## Step 1
-
----
 
 Next.js の公式サイトにアクセスし、ドキュメントの [Getting Started](https://nextjs.org/docs/getting-started) にある以下のコマンドをターミナルで入力する。
 
@@ -77,11 +77,7 @@ my-app #任意のプロジェクト名
 └── yarn.lock
 ```
 
----
-
 ## Step 2
-
----
 
 Step1 で構成したプロジェクトをカレントディレクトリに選択した状態で以下のコマンドを入力し、ローカルサーバを立ち上げる。
 
@@ -95,8 +91,6 @@ yarn dev
 その後 [http://localhost:3000](http://localhost:3000) へアクセスし、以下の初期画面を確認する。
 
 ![Next.jsの初期画面](/public/next-js-first-page.png)
-
----
 
 ## Step 3
 
