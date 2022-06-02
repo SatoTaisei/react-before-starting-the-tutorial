@@ -4,17 +4,17 @@
 
 ---
 
-Step1：Next.js が用意するコマンドでテンプレートを作成。
+Step1：Next.js が用意するコマンドでテンプレートを作成する。
 
-Step2：ローカルサーバーで立ち上げる。
+Step2：ローカルサーバーでプロジェクトを立ち上げる。
 
-Step3：初期画面をコンポーネント化しリファクタリングする。
+Step3：初期画面をコンポーネント化するためにコードをリファクタリングする。
 
 ---
 
 ## Step 1
 
-Next.js の公式サイトにアクセスし、ドキュメントの [Getting Started](https://nextjs.org/docs/getting-started) にある以下のコマンドをターミナルで入力する。
+Next.js の公式サイトにアクセスし、ドキュメントの [Getting Started](https://nextjs.org/docs/getting-started) にある下記のコマンドのいずれかをターミナルで入力する。
 
 ```bash
 npx create-next-app@latest
@@ -22,7 +22,7 @@ npx create-next-app@latest
 yarn create next-app
 ```
 
-その後下記のように、対話形式でプロジェクト名が質問されるため、任意のプロジェクト名を入力する。（※下記の例では「my-app」）
+その後、対話形式でプロジェクト名が質問されるため、任意のプロジェクト名を入力する。（※下記の例では「my-app」）
 
 ```bash
  % npx create-next-app@latest
@@ -32,7 +32,7 @@ Ok to proceed? (y) y
 ✔ What is your project named? … my-app
 ```
 
-インストールが成功すると下記の文章が表示され、指定したプロジェクト名のフォルダが出来上がる。
+インストールが成功すると下記の文章が表示され、指定したプロジェクト名のフォルダが作成される。
 
 ```bash
 Success! Created my-app at /Users/mac/Desktop/my-app
@@ -51,7 +51,7 @@ We suggest that you begin by typing:
   npm run dev
 ```
 
-ディレクトリ構成は以下のものが確認できる。
+ディレクトリ構成は下記のものが確認できる。
 
 ```bash
 my-app #任意のプロジェクト名
@@ -79,7 +79,7 @@ my-app #任意のプロジェクト名
 
 ## Step 2
 
-Step1 で構成したプロジェクトをカレントディレクトリに選択した状態で以下のコマンドを入力し、ローカルサーバを立ち上げる。
+Step1 で構成したプロジェクトをカレントディレクトリに選択した状態で以下のコマンドを入力し、ローカルサーバーを立ち上げる。
 
 ```bash
 cd my-app
@@ -88,7 +88,7 @@ npm run dev
 yarn dev
 ```
 
-その後 [http://localhost:3000](http://localhost:3000) へアクセスし、以下の初期画面を確認する。
+その後 [http://localhost:3000](http://localhost:3000) にアクセスし、以下の初期画面を確認する。
 
 ![Next.jsの初期画面](/public/next-js-first-page.png)
 
@@ -96,7 +96,7 @@ yarn dev
 
 ディレクトリ構成を以下のように変更する。\*
 
-同時に React と親和性の高い JSX 記法を用いるファイルの拡張子を js→jsx に変更する。
+同時に React と親和性の高い JSX 記法を用いるファイルの拡張子を js→jsx に変更する。（変更点：index.js → index.jsx）
 
 ```bash
 my-app #任意のプロジェクト名
@@ -111,17 +111,19 @@ my-app #任意のプロジェクト名
 └── **
 ```
 
-\* src フォルダに着目するため、それ以外のファイル・フォルダは省略する。
+\* ここで **src フォルダ**に着目するため、その他のファイル・フォルダは省略する。
 
-ここからは **src/pages/index.js** と **src/styles/Home.module.css** のコードを**src/compnents**配下へコンポーネント化していきます。
+---
 
-コンポーネント化する要素は以下の画像の通りです。
+☆ ここからは **src/pages/index.js** と **src/styles/Home.module.css**\* のコードを**src/compnents**配下へコンポーネント化していきます。
+
+\* ※スタイル形式に Next.js のデフォルトである CSS モジュールを利用するには、拡張子を module.css としなくてはならないことに注意。
+
+コンポーネント化する要素は以下の通りです。
 
 ![コンポーネント図](./public/next-js-componetns.png)
 
-下記のように、一つのコンポーネントフォルダに jsx ファイルと module.css\*ファイルのセットで格納します。
-
-\* ※スタイル形式に Next.js のデフォルトである CSS モジュールを利用するには、拡張子を module.css としなくてはならないことに注意。
+下記のように、一つのコンポーネントフォルダに jsx ファイルと module.css ファイルのセットで格納します。
 
 ```bash
 my-app #任意のプロジェクト名
@@ -145,6 +147,8 @@ my-app #任意のプロジェクト名
 │          └── **
 └── **
 ```
+
+---
 
 ### Heading
 
@@ -187,6 +191,8 @@ export const Heading = () => {
 }
 ```
 
+---
+
 ### Breadcrumb
 
 ▼ Breadcrumb.jsx
@@ -225,6 +231,8 @@ export const Breadcrumb = () => {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 ```
+
+---
 
 ### Links
 
@@ -314,6 +322,8 @@ export const Links = () => {
   }
 }
 ```
+
+---
 
 ### Footer
 
